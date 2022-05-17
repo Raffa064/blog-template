@@ -1,6 +1,8 @@
 var progressbar = document.getElementById('progressbar')
 progressbar.setAttribute('class', 'show-block')
-var url = 'http://localhost:7700/blog.json'
+var url = document.URL
+url = url.substring(0, url.lastIndexOf('/'))+'/blog.json'
+console.log(url)
 var req = new XMLHttpRequest()
 req.open("GET", url)
 req.onreadystatechange = function() {
