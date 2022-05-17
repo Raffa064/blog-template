@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: smooth;    
+}
+
 body {
     width: 100vw;
     min-height: 100vh;
@@ -14,18 +18,19 @@ header {
     color: #aaa;
 }
 
-header > nav > ul, header > nav > ul > li {
+header>nav>ul,
+header>nav>ul>li {
     display: inline;
     list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
-header > nav {
+header>nav {
     text-align: right;
 }
 
-header > nav > ul > li > button {
+header>nav>ul>li>button {
     background-color: #222;
     padding: 10px;
     border: none;
@@ -35,20 +40,23 @@ header > nav > ul > li > button {
     transition: color linear 0.2s;
 }
 
-header > nav > ul > li > button:active {
+header>nav>ul>li>button:active {
     background-color: #333;
 }
 
-header > nav > ul > li > button:hover {
+header>nav>ul>li>button:hover {
     animation: nav-button-hover 1s;
 }
 
 @keyframes nav-button-hover {
-    0%, 100% {
+
+    0%,
+    100% {
         color: #aaa;
     }
+
     50% {
-       color: #08f; 
+        color: #08f;
     }
 }
 
@@ -102,7 +110,7 @@ main {
     }
 
     100% {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
     }
 }
 
@@ -111,13 +119,34 @@ main {
         content: 'Loading.';
     }
 
-    50% {
+    25% {
         content: 'Loading...';
     }
 
-    100% {
-        content: 'Loading...';
+    50% {
+        content: 'Loading..';
     }
+    75% {
+        content: 'Loading.';
+    }
+    100% {
+        content: 'Loading';
+    }
+}
+
+.error-parent {
+    width: 50vw;
+    height: 30vh;
+    padding: 15px;
+    margin: calc(50vh - 15vh) auto;
+    color: #f00;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #00000040;
+    text-align: center;
+}
+
+.error-parent > h1 {
+    margin: 0 0 0 0;
 }
 
 .pub {
