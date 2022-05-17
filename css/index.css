@@ -1,0 +1,180 @@
+body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0 0 0 0;
+    position: relative;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: calc(100vw - 10px);
+    padding: 10px;
+    background-color: #222;
+    color: #aaa;
+}
+
+header > nav > ul, header > nav > ul > li {
+    display: inline;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+header > nav {
+    text-align: right;
+}
+
+header > nav > ul > li > button {
+    background-color: #222;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    color: #aaa;
+    transition: background-color linear 0.2s;
+    transition: color linear 0.2s;
+}
+
+header > nav > ul > li > button:active {
+    background-color: #333;
+}
+
+header > nav > ul > li > button:hover {
+    animation: nav-button-hover 1s;
+}
+
+@keyframes nav-button-hover {
+    0%, 100% {
+        color: #aaa;
+    }
+    50% {
+       color: #08f; 
+    }
+}
+
+main {
+    height: 100%;
+    padding-bottom: 3em;
+}
+
+.show-block {
+    display: block;
+}
+
+.hide-block {
+    display: none;
+}
+
+.progressbar {
+    width: 100px;
+    height: 1em;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #eee;
+    color: #004BA0;
+}
+
+.progressbar::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: relative;
+    left: -2em;
+    display: block;
+    background-color: #08f;
+    border-radius: 3px;
+    animation: progressbar 0.8s infinite;
+}
+
+.progressbar::after {
+    content: '';
+    width: 100%;
+    height: 1em;
+    display: block;
+    position: relative;
+    top: -1em;
+    animation: progressbar-loading-text 0.8s infinite;
+}
+
+@keyframes progressbar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes progressbar-loading-text {
+    0% {
+        content: 'Loading.';
+    }
+
+    50% {
+        content: 'Loading...';
+    }
+
+    100% {
+        content: 'Loading...';
+    }
+}
+
+.pub {
+    padding: 10px;
+    margin: 10px;
+}
+
+.pub-title {
+    display: inline;
+    color: #001021;
+    font-size: 1.5em;
+}
+
+.pub-subtitle {
+    display: inline;
+    margin-left: 10px;
+    color: #004BA0;
+    font-size: 1em;
+}
+
+.pub-date {
+    float: right;
+}
+
+.pub>hr {
+    height: 1px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px #00000070;
+}
+
+.pub-content {
+    padding: 10px;
+    margin: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    color: #000;
+}
+
+footer {
+    min-width: 100vw;
+    height: 2em;
+    padding: 4px;
+    position: absolute;
+    bottom: 0;
+    background-color: #222;
+    overflow: hidden;
+    color: #aaa;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #08f;
+    transition: color linear 0.2s;
+}
+
+a:active {
+    color: #00C9FF;
+}
